@@ -28,3 +28,6 @@ Temporary Items
 
 # exclude GeoTiff that GitHub wont expode
 .tiff
+*.tiff
+.tif
+*.tif
