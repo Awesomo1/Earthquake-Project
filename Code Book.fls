@@ -1,0 +1,47 @@
+PWD c:/Users/flori/OneDrive/Dokumente/GitHub/Earthquake-Project
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf.cnf
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/Users/flori/OneDrive/Dokumente/GitHub/Earthquake-Project/Code Book.tex
+OUTPUT Code Book.log
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+INPUT ./Code Book.aux
+INPUT ./Code Book.aux
+INPUT Code Book.aux
+OUTPUT Code Book.aux
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+INPUT c:/Users/flori/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
