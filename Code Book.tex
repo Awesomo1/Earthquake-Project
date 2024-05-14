@@ -8,6 +8,9 @@
 Moises De Jesus Maldonado Alonso, Florian Hellwig}
 \date{23.05.2024}
 
+\newcommand\Plotwidth{0.8}
+\newcommand\Bilderwidth{0.8}
+
 \begin{document}
 
 \maketitle
@@ -71,6 +74,7 @@ Environmental Information
     \item \textbf{Notes:} -
 \end{itemize}
 
+\begin{comment}
 \subsection{Mo}
 \begin{itemize}
     \item \textbf{Description:} Month the earthquake happened
@@ -100,6 +104,8 @@ Environmental Information
     \item \textbf{Missing Values:} ???
     \item \textbf{Notes:} -
 \end{itemize}
+
+\end{comment}
 
 \begin{comment}
 
@@ -169,6 +175,8 @@ Environmental Information
 
 \end{comment}
 
+\begin{comment}
+
 \subsection{Region}
 \begin{itemize}
     \item \textbf{Description:} Region where the earthquake happened
@@ -179,7 +187,7 @@ Environmental Information
     \item \textbf{Notes:} -
 \end{itemize}
 
-\begin{comment}
+\end{comment}
 
 \subsection{Latitude}
 \begin{itemize}
@@ -200,8 +208,6 @@ Environmental Information
     \item \textbf{Missing Values:} ???
     \item \textbf{Notes:} -
 \end{itemize}
-    
-\end{comment}
 
 \subsection{Focal Depth (km)}
 \begin{itemize}
@@ -243,12 +249,12 @@ Environmental Information
     \item \textbf{Notes:} -
 \end{itemize}
 
-\subsection{Population density national}
+\subsection{pop\_total}
 \begin{itemize}
-    \item \textbf{Description:} Population density of the country where the earthquake happened
+    \item \textbf{Description:} Total Population in preperation Radius
     \item \textbf{Type:} Numerical
-    \item \textbf{Units:} $\text{People}/\text{kilometer}^2$
-    \item \textbf{Range/Values:} Positive integers, rounded to the next ten thousandth
+    \item \textbf{Units:} -
+    \item \textbf{Range/Values:} Positive floats, rounded to neares integer
     \item \textbf{Missing Values:} ???
     \item \textbf{Notes:} -
 \end{itemize}
@@ -310,7 +316,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no deaths the field was left blank.
     \item \textbf{Notes:} 0: No deaths, 1: 1-50 deaths, 2: 51-100 deaths, 3: 101-1000 deaths, 4: more than 1000 deaths
 \end{itemize}
 
@@ -320,7 +326,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no injuries the field was left blank.
     \item \textbf{Notes:} 0: No people injured, 1: 1-50 people injured, 2: 51-100 people injured, 3: 101-1000 people injured, 4: more than 1000 people injured
 \end{itemize}
 
@@ -330,7 +336,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no damages the field was left blank.
     \item \textbf{Notes:} 0: No costs, 1: 0-1 million US-Dollars, 2: 1-5 million US-Dollars, 3: 5-30 million US-Dollars, 4: more than 30 million US-Dollars
 \end{itemize}
 
@@ -340,7 +346,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no destroyed houses the field was left blank.
     \item \textbf{Notes:} 0: No houses destroyed, 1: 1-50 houses destroyed, 2: 51-100 houses destroyed, 3: 101-1000 houses destroyed, 4: more than 1000 houses destroyed
 \end{itemize}
 
@@ -350,12 +356,25 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no damaged houses the field was left blank.
     \item \textbf{Notes:} 0: No houses damaged, 1: 1-50 houses damaged, 2: 51-100 houses damaged, 3: 101-1000 houses damaged, 4: more than 1000 houses damaged
 \end{itemize}
 
 \section{Summary choices}
 
 \section{Study design}
+
+\subsection{Dimension reduction}
+
+The data is sparse, to combat this, the dimension of the data gets reduced. For the reduction, the description columns were chosen. These columns are already binned with adequate ranges, which speeds thing up. For the dimension reduction, PCA was considered. With the PCA, it's not clear how the data columns are calculated together, and it's also not clear that a lower value after the PCA is necessarily a low value for all included columns. Therefore, a second choice was made to sum all columns and then map the values between 0 and 1. Because the columns are all already all between 0 and 4 there don't need to be normalised.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\Plotwidth\textwidth]{Plots/PCA_SUM.pdf}
+    \caption{Comparison between PCA and SUM over the reduced columns.}
+    \label{fig:PCA_SUM}
+\end{figure}
+
+In figure \ref{fig:PCA_SUM} can be seen, the Histograms between PCA and SUM are fairly similar.
 
 \end{document}
