@@ -226,7 +226,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} Normally between 1 and 10
-    \item \textbf{Missing Values:} No values were missing
+    \item \textbf{Missing Values:} Tuples with a missing magnitude value were dropped completely
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -246,18 +246,18 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Percentage
     \item \textbf{Range/Values:} Between 0 and 1, rounded to the next ten thousandth
-    \item \textbf{Missing Values:} No values were missing
+    \item \textbf{Missing Values:} Tuples with a missing p0p50\_share value were dropped completely
     \item \textbf{Notes:} -
 \end{itemize}
 
 \subsection{pop\_total}
 \begin{itemize}
-    \item \textbf{Description:} Total Population in preperation Radius
+    \item \textbf{Description:} Total Population in preparation Radius
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} Positive floats, rounded to nearest integer
     \item \textbf{Missing Values:} No values were missing
-    \item \textbf{Notes:} Calculated based on the population density data: First, the preperation radius was calculated with the magnitude, and then the number of people within this radius was summed up. Reference: \lstinline{"pop_regional.ipynb"}
+    \item \textbf{Notes:} Calculated based on the population density data: First, the preparation radius was calculated with the magnitude, and then the number of people within this radius was summed up. Reference: \lstinline{"pop_regional.ipynb"}
 \end{itemize}
 
 \subsection{Total Deaths}
