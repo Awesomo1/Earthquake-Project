@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{amsmath}
+\usepackage{listings}
 
 \title{Code book}
 \author{Aaron Nova, Till Nils Böhringer, \\ 
@@ -255,8 +256,8 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} Positive floats, rounded to neares integer
-    \item \textbf{Missing Values:} ???
-    \item \textbf{Notes:} -
+    \item \textbf{Missing Values:} -
+    \item \textbf{Notes:} The total population got calculated with the population density data. With the magnitude, the preperation radius got calculated and then all people within this radius summed up. This happends in the File \lstinline{"pop_regional.ipynb"}
 \end{itemize}
 
 \subsection{Total Deaths}
