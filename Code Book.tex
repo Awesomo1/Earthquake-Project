@@ -22,7 +22,7 @@ Moises De Jesus Maldonado Alonso, Florian Hellwig}
 \begin{itemize}
 \item \textbf{Source:} National Centers for
 Environmental Information
-\item \textbf{Information about the dataset:} Contains data about time point, location, magnitude, financial costs and human losses of earthquakes which happened in the years 2000-2020
+\item \textbf{Information about the dataset:} Contains data about time point, location, magnitude, financial costs, and human losses of earthquakes that happened in the years 2000-2020
 \item \textbf{Date of retrieval:} 18.04.2024
 \item \textbf{Data Source:} https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/event-data?maxYear=2020\&minYear=1999
 \end{itemize}
@@ -63,7 +63,7 @@ Environmental Information
 \item \textbf{Data Source:} https://hub.worldpop.org/geodata/listing?id=64
 \end{itemize}
 
-\section{Variables in the cleaned Master Data frame}
+\section{Variables in the Master Data frame}
 
 \subsection{Year}
 \begin{itemize}
@@ -71,7 +71,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} 2000 - 2020, integers
-    \item \textbf{Missing Values:} ??? How missing values were handled
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -158,7 +158,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} Countries worldwide
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -196,7 +196,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Degrees
     \item \textbf{Range/Values:} -90 - 90, rounded to the nearest thousandths
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -206,7 +206,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Degrees
     \item \textbf{Range/Values:} -180 - 180, rounded to the nearest thousandths
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -216,17 +216,17 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Kilometers
     \item \textbf{Range/Values:} Positive integers
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
 \subsection{Mag}
 \begin{itemize}
-    \item \textbf{Description:} Magnitude of the earthquake on the richter scale
+    \item \textbf{Description:} Magnitude of the earthquake on the Richter scale
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
-    \item \textbf{Range/Values:} ??? (depends on the scale)
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Range/Values:} Normally between 1 and 10
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -236,7 +236,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} US-Dollars
     \item \textbf{Range/Values:} Positive values, rounded to the next ten thousandth
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -246,7 +246,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Percentage
     \item \textbf{Range/Values:} Between 0 and 1, rounded to the next ten thousandth
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -255,9 +255,9 @@ Environmental Information
     \item \textbf{Description:} Total Population in preperation Radius
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} -
-    \item \textbf{Range/Values:} Positive floats, rounded to neares integer
-    \item \textbf{Missing Values:} -
-    \item \textbf{Notes:} The total population got calculated with the population density data. With the magnitude, the preperation radius got calculated and then all people within this radius summed up. This happends in the File \lstinline{"pop_regional.ipynb"}
+    \item \textbf{Range/Values:} Positive floats, rounded to nearest integer
+    \item \textbf{Missing Values:} No values were missing
+    \item \textbf{Notes:} Calculated based on the population density data: First, the preperation radius was calculated with the magnitude, and then the number of people within this radius was summed up. Reference: \lstinline{"pop_regional.ipynb"}
 \end{itemize}
 
 \subsection{Total Deaths}
@@ -266,7 +266,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} People
     \item \textbf{Range/Values:} Non negative integers
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if there were no deaths, the field was left blank
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -276,7 +276,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} People
     \item \textbf{Range/Values:} Non negative integers
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no people were injured, the field was left blank
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -286,7 +286,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Millions US-Dollars
     \item \textbf{Range/Values:} Non negative values 
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if there was no financial damage, the field was left blank
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -297,7 +297,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Houses
     \item \textbf{Range/Values:} Non negative integers
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no houses were destroyed, the field was left blank
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -307,7 +307,7 @@ Environmental Information
     \item \textbf{Type:} Numerical
     \item \textbf{Units:} Houses
     \item \textbf{Range/Values:} Non negative integers
-    \item \textbf{Missing Values:} ???
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no houses were damaged, the field was left blank
     \item \textbf{Notes:} -
 \end{itemize}
 
@@ -317,7 +317,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no deaths the field was left blank.
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if there were no deaths, the field was left blank
     \item \textbf{Notes:} 0: No deaths, 1: 1-50 deaths, 2: 51-100 deaths, 3: 101-1000 deaths, 4: more than 1000 deaths
 \end{itemize}
 
@@ -327,7 +327,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no injuries the field was left blank.
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no people were injured, the field was left blank
     \item \textbf{Notes:} 0: No people injured, 1: 1-50 people injured, 2: 51-100 people injured, 3: 101-1000 people injured, 4: more than 1000 people injured
 \end{itemize}
 
@@ -337,7 +337,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no damages the field was left blank.
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if there was no financial damage, the field was left blank
     \item \textbf{Notes:} 0: No costs, 1: 0-1 million US-Dollars, 2: 1-5 million US-Dollars, 3: 5-30 million US-Dollars, 4: more than 30 million US-Dollars
 \end{itemize}
 
@@ -347,7 +347,7 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no destroyed houses the field was left blank.
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no houses were destroyed, the field was left blank
     \item \textbf{Notes:} 0: No houses destroyed, 1: 1-50 houses destroyed, 2: 51-100 houses destroyed, 3: 101-1000 houses destroyed, 4: more than 1000 houses destroyed
 \end{itemize}
 
@@ -357,9 +357,16 @@ Environmental Information
     \item \textbf{Type:} Categorical
     \item \textbf{Units:} -
     \item \textbf{Range/Values:} $\{0,1,2,3,4 \}$
-    \item \textbf{Missing Values:} Set to 0, based on the raw data it's assumed that if there were no damaged houses the field was left blank.
+    \item \textbf{Missing Values:} Set to 0, based on the raw data, it's assumed that if no houses were damaged, the field was left blank
     \item \textbf{Notes:} 0: No houses damaged, 1: 1-50 houses damaged, 2: 51-100 houses damaged, 3: 101-1000 houses damaged, 4: more than 1000 houses damaged
 \end{itemize}
+
+
+\begin{comment}
+Mo,Dy,Hr,Mn,Sec,Tsu,Vol,Location Name,MMI Int,Deaths,Death Description,Missing,Missing Description,Injuries,Injuries Description,Damage ($Mil),Damage Description,Houses Destroyed,Houses Destroyed Description,Houses Damaged,Houses Damaged Description,Total Deaths,Total Death Description,Total Missing,Total Missing Description,Total Injuries,Total Injuries Description,Total Damage ($Mil),Total Damage Description,Total Houses Destroyed,Total Houses Destroyed Description,Total Houses Damaged,Total Houses Damaged Description,Total Houses Damaged Description.1,Region,Average Income,p0p50_share,Population density national
+\end{comment}
+
+The columns ... were not listed here as they were not used and dropped from the beginning
 
 \section{Summary choices}
 
