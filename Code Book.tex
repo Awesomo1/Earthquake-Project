@@ -1,8 +1,12 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{amsmath}
 \usepackage{listings}
+\usepackage{placeins}
+\usepackage[english]{babel}
+\usepackage{parskip}
+
 
 \title{Code book}
 \author{Aaron Nova, Till Nils Böhringer, \\ 
@@ -358,7 +362,7 @@ Environmental Information
     \item \textbf{Range/Values:} Positive floats, rounded to nearest integer
     \item \textbf{Missing Values:} No values were missing
     \item \textbf{Notes:} Calculated based on the population density data: First, the preparation radius was calculated with the magnitude, and then the number of people within this radius was summed up. Reference: \lstinline{"pop_regional.ipynb"}; 
-    Only in Master Data frame reduced
+    Only in the file \lstinline{"master_df_reduced.ipynb"}
 \end{itemize}
 
 
@@ -374,9 +378,34 @@ The columns Mo, Dy, Hr, Mn, Sec, Tsu, Vol, Location Name, MMI Int, Deaths, Death
 
 \section{Study design}
 
+\subsection{Regional population data}
+
+The total population that lives in the area of the earthquake, will probably have an impact on the severity of the earthquake. Therefore, we wanted to include this in our data. The data came in the form of GeoTIFF's, these are TIFF graphics in which every pixel luminosity is the corresponding value and there is also the geographical data in the metadata of the file. The values are the population density and the resolution is $1 km^2$. Which means the Files are huge, over $1 GB$. From 2000 to 2020, this means the hole dataset is over $25 GB$. So the data has to be pulled out selectively without loading the hole data.
+
+It's also the question from which area around the earthquake the population should be calculated. There is a preparation radius that is a basis in what radius preparation should be made, based on the magnitude of the earthquake\footnote{Source: The Possibility of Earthquake Forecasting, Sergey Pulinets and Dimitar Ouzounov, 2018, ISBN: 978-0-7503-1249-3}.
+
+\begin{table}[h]
+    \centering
+    \caption{The radius of the preparation zone, based on the magnitude.}
+    \label{tab:preperation_radius}
+    \begin{tabular}{|r|r|}
+    \hline
+    Magnitude & Earthquake preparation zone radius (km) \\ \hline
+    3         & 19.5                                    \\ \hline
+    4         & 52.5                                    \\ \hline
+    5         & 141                                     \\ \hline
+    6         & 380                                     \\ \hline
+    7         & 1022                                    \\ \hline
+    8         & 2754                                    \\ \hline
+    9         & 7413                                    \\ \hline
+    \end{tabular}
+    \end{table}
+
+The table \ref{tab:preperation_radius} got linear interpolated to all earthquakes in the data. Based on this radius, the location of the earthquake and the year, just the local data from the GeoTIFF got loaded and the out of this the total population in the area got calculated. All this is in the file \lstinline{"pop_regional.ipynb"}.
+
 \subsection{Dimension reduction}
 
-The data is sparse, to combat this, the dimension of the data gets reduced. For the reduction, the description columns were chosen. These columns are already binned with adequate ranges, which speeds thing up. For the dimension reduction, PCA was considered. With the PCA, it's not clear how the data columns are calculated together, and it's also not clear that a lower value after the PCA is necessarily a low value for all included columns. Therefore, a second choice was made to sum all columns and then map the values between 0 and 1. Because the columns are all already all between 0 and 4 there don't need to be normalised.
+The data is sparse, to combat this, the dimension of the data gets reduced. For the reduction, the description columns were chosen. These columns are already binned with adequate ranges, which speeds thing up. For the dimension reduction, PCA was considered. With the PCA, it's not clear how the data columns are calculated together, and it's also not clear that a lower value after the PCA is necessarily a low value for all included columns. Therefore, a second choice was made to sum all columns and then map the values between 0 and 1. Because the columns are all already all between 0 and 4 there don't need to be normalized.
 
 \begin{figure}[h]
     \centering
@@ -385,8 +414,9 @@ The data is sparse, to combat this, the dimension of the data gets reduced. For 
     \label{fig:PCA_SUM}
 \end{figure}
 
-In figure \ref{fig:PCA_SUM} can be seen, the Histograms between PCA and SUM are fairly similar. This is all in the file \lstinline{"dimension_reduction.ipynb"}
+In figure \ref{fig:PCA_SUM} can be seen, the Histograms between PCA and SUM are fairly similar. This is all in the file \lstinline{"dimension_reduction.ipynb"}. The dataframe that came out of this is \lstinline{"master_df_reduced.csv"}. This is also the one most models are based on.
 
+\FloatBarrier
 \section{Software (incl. versions) used}
 
 \begin{itemize}
