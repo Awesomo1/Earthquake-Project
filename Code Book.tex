@@ -417,6 +417,13 @@ The data is sparse, to combat this, the dimension of the data gets reduced. For 
 In figure \ref{fig:PCA_SUM} can be seen, the Histograms between PCA and SUM are fairly similar. This is all in the file \lstinline{"dimension_reduction.ipynb"}. The dataframe that came out of this is \lstinline{"master_df_reduced.csv"}. This is also the one most models are based on.
 
 \FloatBarrier
+
+\subsection{Model training}
+
+There was a lot of trial and error with the first regression Models, because of that there are in multiple files. There are the files \lstinline{"Playing with some Models_Flo.ipynb"} and \lstinline{"models_tests.ipynb"}. The performance of the regressions models is poor, none of the models got a score value over 0.4.
+
+Then the decision came up to discretize the target value and treat it as a classification problem. Especially with ensemble methods we had great success in terms of accuracy. All this is in the file \lstinline{"Earthquake_Modeling_with_badness_value.ipynb"}.
+
 \section{Software (incl. versions) used}
 
 \begin{itemize}
